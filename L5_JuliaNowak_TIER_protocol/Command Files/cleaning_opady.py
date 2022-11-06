@@ -139,7 +139,7 @@ data['id'] = 'MX000017004'
 data['date'] = date
 data['prcp'] = prcp_final
 
-df_final = pd.DataFrame(data)
-print(df_final)
-df_final = df_final.dropna()
-df_final.to_excel("../Analysis Data/Final_opady.xlsx", sheet_name='One_one')
+df_final_opady = pd.DataFrame(data)
+print(df_final_opady)
+df_final_opady = df_final_opady.dropna()
+df_final_opady.to_excel("../Analysis Data/Final_opady.xlsx", sheet_name='One_one')

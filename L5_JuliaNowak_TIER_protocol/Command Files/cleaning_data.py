@@ -94,7 +94,7 @@ for i in range(len(df1.index)):
     else:
         flaga = True
 
-print(war)  # Do usunięcia
+# print(war)  # Do usuwania  ### WAŻNE
 df1.to_excel("../Command Files/New_clear.xlsx", sheet_name='One_one')
 
 
@@ -158,6 +158,5 @@ data['tmax'] = tmax_final
 data['tmin'] = tmin_final
 
 df_final = pd.DataFrame(data)
-print(df_final)
 df_final = df_final.dropna()
 df_final.to_excel("../Analysis Data/Final_data.xlsx", sheet_name='One_one')
