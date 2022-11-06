@@ -49,7 +49,6 @@ for i in range(31):
         data[f'd{i + 1}'].append(float((ll_new[u][i])))
 
 df = pd.DataFrame(data)
-print(df)
 
 ###########################
 # Czyszczenie pustych miejsc, zgodnie z latami i ilością dni w miesiącu
@@ -74,8 +73,6 @@ for u in range(len(ll_new)):
 
 df1 = df.drop(labels=to_del, axis=0)
 df1 = df1.reset_index()
-print(df1)
-print(df.loc[:, ['year','month', 'element']])
 
 war = []
 c1 = 0
@@ -102,7 +99,6 @@ df1.to_excel("../Command Files/New_clear.xlsx", sheet_name='One_one')
 
 
 df1 = pd.read_excel("../Command Files/Data_edited.xlsx")
-print(df1)
 
 ########################
 # Tabela końcowa I
