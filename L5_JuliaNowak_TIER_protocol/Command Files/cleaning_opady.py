@@ -1,8 +1,11 @@
 import pandas as pd
 import numpy as np
 
-######################
+###############################################################################################################
+# Część 1
+###############################################################################################################
 # Wstępne czyszczenie błędnych odczytów, odpowiedni podział wartości, szkielet tabeli i utworzenie DF
+
 with open("../Original Data/weather.txt") as f:
     id = []
     year = []
@@ -48,7 +51,9 @@ for i in range(31):
 
 df = pd.DataFrame(data)
 
-###########################
+###############################################################################################################
+# Część 2
+###############################################################################################################
 # Czyszczenie pustych miejsc, zgodnie z latami i ilością dni w miesiącu
 
 ok = df.isnull().sum(axis=1)
@@ -72,6 +77,8 @@ for u in range(len(ll_new)):
 df1 = df.drop(labels=to_del, axis=0)
 df1 = df1.reset_index()
 
+
+# Ewentualne czyszczenie - niekonieczne
 war = []
 c1 = 0
 c2 = 0
@@ -92,17 +99,20 @@ for i in range(len(df1.index)):
     else:
         flaga = True
 
+# Kolejny plik pomocniczy
 df1.to_excel("../Command Files/new_opady.xlsx", sheet_name='One_one')
 
-
-df1 = pd.read_excel("../Command Files/edited_opady.xlsx")
-
-########################
+###############################################################################################################
+# Część 3
+###############################################################################################################
 # Tabela końcowa I
+
+
+# Odczyt poprawionego ręcznie pliku
+df1 = pd.read_excel("../Command Files/edited_opady.xlsx")
 
 prcp_final = []
 date = []
-
 
 for i in range(len(df1.index)):
     for d in range(31):
@@ -140,6 +150,8 @@ data['date'] = date
 data['prcp'] = prcp_final
 
 df_final_opady = pd.DataFrame(data)
-print(df_final_opady)
+
 df_final_opady = df_final_opady.dropna()
+
+# Wersja ostateczna
 df_final_opady.to_excel("../Analysis Data/Final_opady.xlsx", sheet_name='One_one')
