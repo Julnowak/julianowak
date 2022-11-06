@@ -1,4 +1,26 @@
-weather.txt - dane pogodowe. 
-Dzienne dane pogodowe z Global Historical Climatology Network dla jednej stacji pogodowej (MX17004) w Meksyku przez pięć miesięcy w 2010 roku. 
-Pierwsza kolumna zawiera dane (id, rok, miesiąc,nazwa zmiennych), w pozostałych kolumnach są wartości zmiennych na dany dzien miesiąca (dzień, d1 – d31). 
+Informacje dotyczące danych pogodowych zawartch w pliku "weather.txt"
+
+Informacje ogólne
+
+W pliku zawarte zostały dzienne dane pogodowe z Global Historical Climatology Network dla jednej stacji pogodowej (MX17004) w Meksyku.
+Dane te były rejestrowane od 4 kwietnia 1956 roku aż do 4 kwietnia roku 2011. Poszczególne dane odzielone są tabulatorami, bądź też literami 'I' lub 'S'.
+W niektórych kolumnach można zaobserwować nieprawidłowe odczyty z czujnika, oznaczone jako '-9999' lub '0'.
+
+
+Zawartość kolumn 
+
+Pierwsza kolumna zawiera kolejno dane:
+- id
+- rok
+- miesiąc
+- nazwa zmiennej (TMAX, TMIN, PRCP)
+
+Oznaczenia zmiennych to odpowiedni:
+- TMAX - temperatura maksymalna
+- TMIN - temperatura minimalna
+- PRCP - opady atmosferyczne
+
+W pozostałych kolumnach są wartości zmiennych na dany dzien miesiąca (dzień, d1 – d31). 
 Miesiące z mniej niż 31 dni mają strukturalne brakujące wartości dla ostatniego dnia (dni) miesiąca.
+
+Plik "weather.txt" nie wymaga konwersji na inny rodzaj pliku - jest on plikiem wejściowym do programu napisanego w języku Python.
