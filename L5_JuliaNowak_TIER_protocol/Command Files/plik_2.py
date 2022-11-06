@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-df1 = pd.read_excel("Command Files/New_clear_recznie_poprawiony.xlsx", 'r')
+df1 = pd.read_excel("../Command Files/Data_edited.xlsx")
 print(df1)
 ########################
 # Tabela końcowa I
@@ -38,22 +38,29 @@ for i in range(len(df1.index)):
                         continue
             tmin_final.append(df1.at[i, f'd{d+1}'])
 
+        if len(str(df1.at[i, 'month'])) == 1:
+            t = '0' + str(df1.at[i, 'month'])
+        else:
+            t = str(df1.at[i, 'month'])
 
-        txt = df1.at[i, 'year'] + '-' + df1.at[i, 'month'] + '-' + f'{d+1}'
+        if len(str(df1.at[i, 'month'])) == 1:
+            y = '0' + str(df1.at[i, 'year'])
+        else:
+            y = str(df1.at[i, 'year'])
+
+        txt = y + '-' + t + '-' + f'{d+1}'
         if txt not in date:
             date.append(txt)
 
-print(len(date))
-print(len(tmax_final))
-print(len(tmin_final))
 
-print(tmin_final)
+aku = pd.read_excel("../Command Files/Data_edited.xlsx", usecols="A", skiprows=list(range(1, len(df1.index) + 1, 2)))
 data = dict()
-#data['id'] =
+data['id'] = 'MX000017004'
 data['date'] = date
 data['tmax'] = tmax_final
 data['tmin'] = tmin_final
 
 df_final = pd.DataFrame(data)
 print(df_final)
-
+df_final = df_final.dropna()
+df_final.to_excel("../Analysis Data/Final_data.xlsx", sheet_name='One_one')

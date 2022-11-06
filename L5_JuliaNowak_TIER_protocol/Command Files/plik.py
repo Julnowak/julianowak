@@ -51,7 +51,7 @@ for i in range(31):
 df = pd.DataFrame(data)
 print(df)
 
-df.to_excel("Command Files/Data_after_processing.xlsx", sheet_name='One_one')
+df.to_excel("../Command Files/Data_after_processing.xlsx", sheet_name='One_one')
 
 ###########################
 # Czyszczenie pustych miejsc, zgodnie z latami i ilością dni w miesiącu
@@ -100,5 +100,5 @@ for i in range(len(df1.index)):
         flaga = True
 
 print(war)  # Do usunięcia
-df1.to_excel("Command Files/New_clear.xlsx", sheet_name='One_one')
+df1.to_excel("../Command Files/New_clear.xlsx", sheet_name='One_one')
 
