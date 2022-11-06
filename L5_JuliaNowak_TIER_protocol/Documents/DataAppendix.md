@@ -67,4 +67,5 @@ Informacje o danych:
 
 ## Informacje dodatkowe
 
-Histogramy do danych zostały zaprezentowane w pliku "Data_appendix.ipynb" znajdującym się w folderze "Documents". W pliku tym można znaleźć przydatne informacje, pomagające w analizie danych.
+Histogramy do danych zostały zaprezentowane w pliku "Data_appendix.ipynb" znajdującym się w folderze "Command Files".
+W folderze tym znajdują się również pliki ".xlsx" zawierające pośrednie pliku w Excelu, tworzone w trakcie przeprowadzania operacji w programie, a także pliki ".py" zawierające instrukcje oczyszczające dane.
